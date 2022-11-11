@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server
+    container_name: mssqldb
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: "zgV_0DK!eSJO75r"
+    ports:
+      - 1433:1433
+    networks:
+      - codefirstnetwork
+
+  codefirstsample:
+    image: ${DOCKER_REGISTRY-}codefirstsample
+    container_name: CodeFirstSampleAPI
+    build:
+      context: .
+      dockerfile: CodeFirstSample/Dockerfile
+    ports:
+      - 55099:80 
+    networks:
+      - codefirstnetwork
+
+networks:
+  codefirstnetwork:
+    driver: bridge
