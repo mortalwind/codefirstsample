@@ -1,4 +1,4 @@
-﻿namespace CodeFirstSample.Data;
+﻿namespace CodeFirstSample.Models;
 
 public class BookDTO
 {
