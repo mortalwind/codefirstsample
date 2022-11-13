@@ -59,4 +59,19 @@ We will wait until the database image is ready. You can view docker image logs b
 Our API project port is 55099. Open your browser and paste this <code>http://localhost:55099/api/books</code> . You will get an error about that login failed as 'sa' for 'bookstore' database. And open new tab, paste this <code>http://localhost:55099/api/initialize</code> then go. A few moments later it writes "Database migration is finished.". After that go back your books page and refresh page. 
 Note: I'm sure that Postman will be better than your browser for these actions.
 
-Yeay! The error is disappered. But there is no data. I told you this is a simple project :) We will add books and authors manually. 
+Yeay! The error is disappered. But there is no data. I told you this is a simple project:) We will add books and authors manually. 
+
+<strong>Let's take a look at the project</strong>
+
+Structure:
+- Abstractions: It contains interfaces and other abstract classes.
+- Controllers: It contains Controllers.
+- Data: It contains database configurations.
+- Models: It contains DTOs and database models
+- Extensions: It contains extension methods.
+- Profiles: It contains Automapper profiles.
+- Repositories: It contains generic repository pattern
+- Services: It containes services what business between api and database
+- docker-compose.yml: the configuration file for dockerize process.
+
+
