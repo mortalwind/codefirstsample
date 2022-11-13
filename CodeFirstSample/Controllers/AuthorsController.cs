@@ -15,7 +15,7 @@ public class AuthorsController : ControllerBase
     private readonly IBookService _bookService;
 
     private readonly IMapper _mapper;
-    public BooksController(IBookService bookService, IMapper mapper)
+    public AuthorsController(IBookService bookService, IMapper mapper)
     {
         _bookService = bookService;
         _mapper = mapper;

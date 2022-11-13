@@ -24,7 +24,7 @@ public class InitializeController : ControllerBase
         _dbContext.Database.EnsureCreated();
         await _dbContext.Database.MigrateAsync();
         
-        return Ok();
+        return Ok("Database migration is finished.");
     }
 
 }
