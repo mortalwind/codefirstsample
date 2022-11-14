@@ -11,10 +11,8 @@ public class MapperProfiles :Profile
 
         CreateMap<Book, BookListDTO>().ForMember(x => x.Author, m => m.MapFrom(d => d.Author.FullName));
 
-
         CreateMap<Author, AuthorDTO>().ReverseMap();
 
         CreateMap<Author, AuthorListDTO>();
     }
-    
 }

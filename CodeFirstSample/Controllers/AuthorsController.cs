@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 
 using CodeFirstSample.Abstractions;
-using CodeFirstSample.Data;
 using CodeFirstSample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
