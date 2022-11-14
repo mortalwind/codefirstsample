@@ -12,22 +12,32 @@ namespace CodeFirstSample.Controllers;
 public class AuthorsController : ControllerBase
 {
 
-    private readonly IBookService _bookService;
+    private readonly IAuthorService _authorService;
 
     private readonly IMapper _mapper;
-    public BooksController(IBookService bookService, IMapper mapper)
+    public AuthorsController(IAuthorService authorService, IMapper mapper)
     {
-        _bookService = bookService;
+        _authorService = authorService;
         _mapper = mapper;
     }
 
     [HttpGet]
-    public async Task<IEnumerable<BookListDTO>> GetBooksAsync()
+    public async Task<IEnumerable<AuthorListDTO>> GetAuthorsAsync()
     {
 
-        var books = await _bookService.GetBooksAsync();
+        var authors = await _authorService.GetAuthorsAsync();
 
-        return _mapper.Map<List<BookListDTO>>(books);
+        return _mapper.Map<List<AuthorListDTO>>(authors);
+
+    }
+
+    [HttpPost]
+    public async Task<AuthorDTO> AddAuthorAsync([FromBody]AuthorDTO  author)
+    {
+
+        var newAuthor = await _authorService.AddAuthorAsync(_mapper.Map<Author>(author));
+
+        return _mapper.Map<AuthorDTO>(newAuthor);
 
     }
 }
