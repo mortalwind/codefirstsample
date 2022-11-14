@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-
-using CodeFirstSample.Data;
 using CodeFirstSample.Models;
 
 namespace CodeFirstSample.Profiles;
